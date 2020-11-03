@@ -1,5 +1,6 @@
 import gulp from "gulp";
 import del from "del";
+import gimg from "gulp-image";
 import sass from "gulp-sass";
 import autopf from "gulp-autoprefixer";
 import minifyCSS from "gulp-csso";
@@ -8,6 +9,10 @@ import babel from "gulp-babel";
 sass.compoiler = require("node-sass");
 
 const gulpdir = {
+    img: {
+        src: "src/img/*",
+        dest: "statics/img"
+    },
     scss: {
         watch: "src/scss/**/*.scss",
         src: "src/scss/styles.scss",
@@ -21,6 +26,11 @@ const gulpdir = {
 }
 
 const clean = () => del(["statics/"])
+
+const img = () => gulp
+                .src(gulpdir.img.src)
+                .pipe(gimg())
+                .pipe(gulp.dest(gulpdir.img.dest));
 
 const styles = () => gulp
     .src(gulpdir.scss.src)
@@ -38,11 +48,12 @@ const js = () => gulp
     .pipe(gulp.dest(gulpdir.js.dest));
 
 const watch = () => {
+    gulp.watch(gulpdir.img.src, img);
     gulp.watch(gulpdir.scss.watch, styles);
     gulp.watch(gulpdir.js.watch, js);
 }
 
-const ready = gulp.series([clean]);
+const ready = gulp.series([clean, img]);
 const assets = gulp.series([styles, js]);
 const postDev = gulp.series([watch]);
 
