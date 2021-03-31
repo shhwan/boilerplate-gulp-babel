@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "browserslist": [
-    "last 2 versions"
+    "last 2 versions",
+    "ie >= 11",
+    "Android >= 4"
   ],
   "dependencies": {
     "gulp-babel": "^8.0.0"

@@ -2,7 +2,7 @@ import gulp from "gulp";
 import del from "del";
 import gimg from "gulp-image";
 import sass from "gulp-sass";
-import autopf from "gulp-autoprefixer";
+import autoprefixer from "gulp-autoprefixer";
 import minifyCSS from "gulp-csso";
 import babel from "gulp-babel";
 
@@ -36,7 +36,7 @@ const styles = () => gulp
     .src(gulpdir.scss.src)
     .pipe(sass().on("error", sass.logError))
     //autoprefixer browsers -> browserslist in package.json
-    .pipe(autopf({ cascade: false }))
+    .pipe(autoprefixer({ cascade: false }))
     .pipe(minifyCSS())
     .pipe(gulp.dest(gulpdir.scss.dest));
 

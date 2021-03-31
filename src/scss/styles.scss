@@ -3,4 +3,11 @@
 
 body {
     background-color: $aquamarine;
+    opacity: 0.7;
+}
+
+div {
+    transform: scale(2);
+    display: flex;
+    flex-wrap: wrap;
 }
