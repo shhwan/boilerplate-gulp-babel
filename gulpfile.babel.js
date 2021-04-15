@@ -4,6 +4,7 @@ import gimg from "gulp-image";
 import sass from "gulp-sass";
 import autoprefixer from "gulp-autoprefixer";
 import minifyCSS from "gulp-csso";
+import uglify from "gulp-uglify";
 import babel from "gulp-babel";
 
 sass.compoiler = require("node-sass");
@@ -45,6 +46,7 @@ const js = () => gulp
     .pipe(babel({
         presets: ["@babel/preset-env"]
     }))
+    .pipe(uglify())
     .pipe(gulp.dest(gulpdir.js.dest));
 
 const watch = () => {
