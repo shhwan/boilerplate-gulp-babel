@@ -6,6 +6,7 @@ import autoprefixer from "gulp-autoprefixer";
 import minifyCSS from "gulp-csso";
 import uglify from "gulp-uglify";
 import babel from "gulp-babel";
+import typescript from "gulp-typescript";
 
 sass.compoiler = require("node-sass");
 
@@ -23,6 +24,11 @@ const gulpdir = {
         watch: "src/js/**/*.js",
         src: "src/js/*.js",
         dest: "statics/js"
+    },
+    ts: {
+        watch: "src/ts/**/*.ts",
+        src: "src/ts/*.ts",
+        dest: "statics/ts" 
     }
 }
 
@@ -49,14 +55,23 @@ const js = () => gulp
     .pipe(uglify())
     .pipe(gulp.dest(gulpdir.js.dest));
 
+const ts = () => gulp
+    .src(gulpdir.ts.src)
+    .pipe(typescript({
+        target: 'ES5',
+        removeComments: true,
+    }))
+    .pipe(gulp.dest(gulpdir.ts.dest))
+
 const watch = () => {
     gulp.watch(gulpdir.img.src, img);
     gulp.watch(gulpdir.scss.watch, styles);
     gulp.watch(gulpdir.js.watch, js);
+    gulp.watch(gulpdir.ts.watch, ts);
 }
 
 const ready = gulp.series([clean, img]);
-const assets = gulp.series([styles, js]);
+const assets = gulp.series([styles, js, ts]);
 const postDev = gulp.series([watch]);
 
 export const build = gulp.series([ready, assets,]);
