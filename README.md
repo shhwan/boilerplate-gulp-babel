@@ -1,9 +1,9 @@
 # boilerplate-gulp-babel
-Gulp + Babel
+- GulpTask - IMG/SCSS/JS/TS
 ## Command
-- yarn build
+- npm run build
     - Build Files
-- yarn dev
+- npm run dev
     - Watch Files
 
 ## Link
@@ -12,3 +12,6 @@ Gulp + Babel
 
 ### gulp-babel
 - https://babeljs.io/docs/en/gulp-babel-minify
+
+### gulp-typescript
+- https://github.com/ivogabe/gulp-typescript
