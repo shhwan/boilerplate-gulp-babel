@@ -1,14 +1,13 @@
 import gulp from "gulp";
 import del from "del";
-import gimg from "gulp-image";
-import sass from "gulp-sass";
+import gimg from 'gulp-imagemin';
 import autoprefixer from "gulp-autoprefixer";
 import minifyCSS from "gulp-csso";
 import uglify from "gulp-uglify";
 import babel from "gulp-babel";
 import typescript from "gulp-typescript";
 
-sass.compoiler = require("node-sass");
+var sass = require('gulp-sass')(require('sass'));
 
 const gulpdir = {
     img: {

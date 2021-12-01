@@ -8,28 +8,30 @@
     "ie >= 11",
     "Android >= 4"
   ],
-  "dependencies": {
-    "gulp-babel": "^8.0.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "@babel/register": "^7.12.1",
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-cli": "^2.3.0",
-    "gulp-csso": "^4.0.1",
-    "gulp-image": "^6.2.1",
-    "gulp-postcss": "^9.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-typescript": "^6.0.0-alpha.1",
-    "gulp-uglify": "^3.0.2",
-    "node-sass": "^5.0.0",
-    "typescript": "^4.2.4"
-  },
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/register": "^7.16.0",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-imagemin": "^7.0.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2",
+    "mozjpeg": "^8.0.0",
+    "postcss": "^8.4.4",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "sass": "^1.44.0"
   }
 }
